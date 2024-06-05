@@ -39,7 +39,7 @@ function addItem(inputArray, num) {
 // Inside the function below, remove the last item of inputArray.
 
 function removeLast(inputArray) {
-  //Code here
+  inputArray.pop()
   return inputArray;
 }
 
@@ -48,7 +48,7 @@ function removeLast(inputArray) {
 // Inside the function below, remove the first item of inputArray.
 
 function removeFirst(inputArray) {
-  //Code here
+  inputArray.shift()
   return inputArray;
 }
 
@@ -58,7 +58,10 @@ function removeFirst(inputArray) {
 // You can assume the array will be at least 2 items long.
 
 function replaceFirstAndLast(inputArray) {
-  //Code here
+  inputArray.shift();
+  inputArray.unshift(42);
+  inputArray.pop();
+  inputArray.push(42)
   return inputArray;
 }
 
@@ -72,8 +75,9 @@ function replaceFirstAndLast(inputArray) {
 
 function addTen(inputArray) {
   let newArr = [];
-  // Code here
-
+  for (input of inputArray){
+      newArr.push(input + 10)
+  }
   return newArr;
 }
 
@@ -83,8 +87,9 @@ function addTen(inputArray) {
 
 function count31() {
   let numbers = [];
-  // Code here
-
+  for (let n = 0; n <= 31; n +=1) {
+    numbers.push(n)
+  }
   return numbers;
 }
 
@@ -94,7 +99,9 @@ function count31() {
 
 function countEvens() {
   let numbers = [];
-  // Code here
+  for (let n = 0; n <= 20; n +=2) {
+    numbers.push(n)
+  }
 
   return numbers;
 }
@@ -105,7 +112,9 @@ function countEvens() {
 
 function countdown() {
   let numbers = [];
-  // Code here
+  for (let n = 10; n >= 1; n -=1) {
+    numbers.push(n)
+  }
 
   return numbers;
 }
@@ -120,8 +129,10 @@ function countdown() {
 
 function backwards(inputArray) {
   let newArray = [];
-  // Code here
-
+  for (let n = inputArray.length - 1; n >= 0; n -=1) {
+    newArray.push(inputArray[n])
+  }
+  
   return newArray;
 }
 
@@ -134,7 +145,7 @@ function backwards(inputArray) {
 // findInArray([0,1,2,3], 4); -> false
 
 function findInArray(inputArray, value) {
-  // Code here
+  const valueFound = inputArray.includes(value)
   return valueFound;
 }
 
@@ -148,7 +159,12 @@ function findInArray(inputArray, value) {
 
 function stopAtNegative(inputArray) {
   let newArray = [];
-  // Code here
+  for (const input of inputArray){
+    if (input < 0) {
+      break
+    }
+    newArray.push(input)
+  }
 
   return newArray;
 }
